@@ -1,0 +1,346 @@
+/* ======= SECCIONES PRINCIPALES ======= */
+.hero-section {
+  text-align: center;
+  padding: 0 1rem 2rem;
+  background-image: url('../fotos/fondo1.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+}
+
+.hero-img {
+  width: 250px;
+}
+
+.info2 {
+  display: block;
+  margin: -45px auto 0;
+  width: 350px;
+}
+.imagen-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* o center, según el alineamiento vertical deseado */
+  gap: 20px; /* espacio entre imágenes */
+  margin-top: 1rem;
+}
+
+.info12 {
+  width: 135px; /* ajusta según lo que necesites */
+  position: relative;
+  top: -45px; /* igual que info3 si deseas alinearlas */
+  
+}
+
+.info3 {
+  width: 135px;
+  
+  position: relative;
+  top: -45px;
+}
+
+.video-section {
+  text-align: center;
+  padding: 0 1rem 2rem;
+  margin-top: -120px;
+  background-image: url('../fotos/fondo2.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+}
+
+.base-img {
+  width: 8000px;
+  margin-top: -75px;
+}
+
+.icon-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: 13px;
+  width: 30px;
+  margin-top: 3px;
+  display: none;
+  cursor: pointer;
+}
+
+.icon-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-top: -40px;
+}
+
+.img9 {
+  width: 140px;
+}
+.img10 {
+  width: 140px;
+}
+
+/* ======= MODAL PDF ======= */
+.modal {
+  display: none; /* Esto lo oculta inicialmente */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: none; /* opcional: sin sombra si no querés nada visible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* PDF directo al borde */
+.modal-content embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent; /* 🔥 importante para que el fondo se vea limpio */
+}
+
+/* Botón cerrar */
+.close-btn {
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  width: 4rem;
+  height: auto;
+  
+  color: rgb(6, 0, 0);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Botón descargar */
+.download-btn {
+  position: absolute;
+  top: 3.5rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+
+/* ======= PANTALLAS GRANDES ======= */
+@media (min-width: 600px) {
+  .hero-section {
+    background-image: url('../fotos/fondo1.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+  }
+  .icon-img {
+
+    width: 105px;
+    
+
+
+    margin-top: 20px;
+  }
+
+  .hero-img {
+    width: 60vw;
+    max-width: 8875px;
+  }
+
+  .info2 {
+    width: 80vw;
+    max-width: 1150px;
+    position: relative;
+    top: -3vh;
+    left: -2vw;
+  }
+
+  .info3 {
+    width: 24vw;
+    position: relative;
+    top: -10vh;
+    transition: transform 0.3s ease;
+  }
+  
+  .info3:hover {
+    transform: scale(1.05);
+  }
+  
+  .info12 {
+    width: 24vw;
+    position: relative;
+    top: -10vh;
+  }
+  .info12:hover {
+    transform: scale(1.05);
+  }
+  .img9 {
+    width: 300px;
+  }
+  .img10 {
+    width: 300px;
+  }
+  
+
+  .video-section {
+    margin-top: 0;
+    background-image: url('../fotos/fondo2.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    min-height: 100vh;
+    margin-top: -215px;
+  }
+
+ 
+
+  .icon-buttons {
+
+    gap: 50vh;
+    margin-top: -20vh;
+  }
+  .imagen-contenedor {
+
+    gap: 275px; /* espacio entre imágenes */
+
+  }
+  
+}
+
+
+
+
+@media (max-width: 599px) {
+  #pdfModal iframe {
+    display: none;
+  }
+
+  #pdfModal .modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+  }
+
+  #pdfModal .download-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #dc2626, #b91c1c); /* Rojo degradado */
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(220, 38, 38, 0.6); /* Sombra roja */
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    z-index: 20;
+  }
+
+  #pdfModal .download-btn:hover,
+  #pdfModal .download-btn:focus {
+    background: linear-gradient(135deg, #b91c1c, #7f1d1d);
+    box-shadow: 0 12px 20px rgba(185, 28, 28, 0.8);
+    transform: translate(-50%, -50%) scale(1.05);
+    outline: none;
+  }
+  .footer-container {
+  
+    margin-top: 0;
+
+  }
+
+
+  
+}
+
+.footer-img {
+  width: 100%;
+  max-width: 100vw;
+  height: auto;
+  margin-top: 0;
+  display: block;
+}
+
+.footer-text {
+  color: white;
+  font-size: 0.75rem; /* equivale a text-xs */
+  margin-top: -60px;
+
+}
+
+
+.footer-contact {
+  display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  gap: 2rem;                /* Espacio entre ambos */
+  flex-wrap: wrap;          /* Para que en pantallas muy pequeñas se acomode vertical */
+  margin-bottom: 1rem;      /* Un poco de espacio abajo */
+}
+
+.footer-mail, .footer-ubi {
+  font-size: 0.5rem;
+  margin: 0;                /* Eliminamos margenes para que el gap controle el espacio */
+  color: #eee;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: -65px;
+  
+}
+
+.footer-link {
+  color: #ffffff; /* Dorado */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: #ff4500; /* Naranja */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.footer-container {
+  position: relative;
+  text-align: center;
+  margin-top: -22px;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .footer-mail, .footer-ubi {
+    font-size: 1.5rem;
+    margin-top: -190px;
+  }
+}

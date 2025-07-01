@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+  .spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px; /* mitad del height */
+    margin-left: -30px; /* mitad del width */
+    z-index: 9999;
+    background: transparent;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../fotos/fondo3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
+  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 17px;
+  }
+  
+  .form-container {
+    width: 92%;
+    max-width: 450px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px 20px;
+    border-radius: 12px;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    color: black;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-container input {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #d32f2f;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #b71c1c;
+  }
+  
+  .info-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #1976d2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .info-btn:hover {
+    background-color: #0d47a1;
+  }
+  
+  .info-text {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #1976d2;
+    font-size: 14px;
+    color: white;
+  }
+  
+  @media (min-width: 600px) {
+    body {
+      background-position: center;
+    }
+  }
+  
+  .fecha-nacimiento {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  
+  .fecha-nacimiento select {
+    width: 32%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+  }
+  
+  #mensaje.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  #mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .toggle-privacidad {
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: #66ccff;
+    margin-bottom: 25px;
+    text-decoration: underline;
+  }
+  #videoFile {
+    display: none;
+  }
+  
+  .legal-text {
+    font-size: 13px;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    color: #ddd;
+  }
+  
+
+
+  .custom-file-upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  
+  .upload-btn {
+    background-color: #388e3c;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+  
+  .upload-btn:hover {
+    background-color: #2e7d32;
+  }
+  
+  #video {
+    display: none;
+  }
+  
+  #file-name {
+    font-size: 14px;
+    color: #ccc;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  

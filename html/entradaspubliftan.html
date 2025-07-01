@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscripción</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/entradaspubliftan.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <img src="../fotos/13.png" class="close-btn" alt="Cerrar" onclick="cerrar()">
+
+    <h1>Inscripción espectador</h1>
+
+    <form id="inscripcionForm">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" name="apellidos" required>
+
+      <label for="dni">DNI/NIE</label>
+      <input type="text" id="dni" name="dni" required>
+
+      <label>Fecha de nacimiento</label>
+<div class="fecha-nacimiento">
+  <select id="dia" name="dia" required></select>
+  <select id="mes" name="mes" required></select>
+  <select id="anio" name="anio" required></select>
+</div>
+ 
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="provincia">Provincia</label>
+      <input type="text" id="provincia" name="provincia" required>
+
+
+      <div class="tipo-entrada-container">
+  <label>Selecciona tipo de entrada</label>
+  <div class="opciones-entrada">
+    <input type="radio" id="entrada-gratis" name="tipoEntrada" value="gratuita">
+    <label for="entrada-gratis" onclick="mostrarDetalles('gratis')">Entrada gratuita</label>
+
+    <input type="radio" id="entrada-asiento" name="tipoEntrada" value="asiento">
+    <label for="entrada-asiento" onclick="mostrarDetalles('asiento')">Entrada con asiento</label>
+  </div>
+
+  <div id="detalles-gratis" class="detalles-entrada">
+    <strong>Entrada gratuita</strong><br>
+    Incluye:
+    <ul>
+      <li>Entrada instalaciones</li>
+      <li>Acceso a las actividades</li>
+    </ul>
+  </div>
+
+  <div id="detalles-asiento" class="detalles-entrada">
+    <strong>Entrada con asiento</strong><br>
+    Incluye:
+    <ul>
+      <li>Entrada instalaciones</li>
+      <li>Acceso a las actividades</li>
+      <li>Asiento durante la competición</li>
+      <li>Mejores vistas de la competición</li>
+      <li>Desde 21€</li>
+    </ul>
+  </div>
+</div>
+
+<div id="tutor-legal" class="mt-4 hidden">
+  <h2 class="font-bold mb-2">Información del Tutor Legal</h2>
+
+  <label for="tutor-nombre">Nombre</label>
+  <input type="text" id="tutor-nombre" name="tutor-nombre" class="mb-2">
+
+  <label for="tutor-apellidos">Apellidos</label>
+  <input type="text" id="tutor-apellidos" name="tutor-apellidos" class="mb-2">
+
+  <label for="tutor-dni">DNI/NIE</label>
+  <input type="text" id="tutor-dni" name="tutor-dni" class="mb-2">
+
+  <label>Fecha de nacimiento</label>
+  <div class="fecha-nacimiento mb-2">
+    <select id="tutor-dia" name="tutor-dia"></select>
+    <select id="tutor-mes" name="tutor-mes"></select>
+    <select id="tutor-anio" name="tutor-anio"></select>
+  </div>
+
+  <label for="tutor-email">Correo electrónico</label>
+  <input type="email" id="tutor-email" name="tutor-email" class="mb-2">
+</div>
+
+      <div class="legal-text-wrapper">
+        <p class="toggle-privacidad" onclick="togglePrivacidad()">Política de Privacidad</p>
+        <div id="privacidad-texto" class="legal-text" style="display: none;">
+          En cumplimiento del Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), te informamos de lo siguiente:<br><br>
+        
+          <strong>Responsable del tratamiento:</strong> Asociación Española de Powerlifting (CIF: G12345678), con domicilio en Calle del Evento 45, 28001 Madrid. Email: <a href="mailto:espfta@gmail.com" style="color: #66ccff;">espfta@gmail.com</a>.<br><br>
+        
+          <strong>Finalidad:</strong> Los datos personales que nos proporciones serán tratados con la única finalidad de gestionar tu inscripción como espectador al evento, realizar el control de acceso y enviar comunicaciones relacionadas con el mismo.<br><br>
+        
+          <strong>Base jurídica:</strong> Tu consentimiento expreso, así como el cumplimiento de obligaciones legales en materia de seguridad para el acceso al evento.<br><br>
+        
+          <strong>Conservación:</strong> Tus datos serán conservados durante el tiempo necesario para la organización y seguimiento del evento, y eliminados en un plazo máximo de 12 meses tras su finalización.<br><br>
+        
+          <strong>Destinatarios:</strong> No se cederán datos a terceros salvo obligación legal. Este formulario se gestiona mediante Google Apps Script, lo que puede implicar transferencias internacionales a Google LLC (EE.UU.). Estas transferencias están amparadas por las cláusulas contractuales tipo aprobadas por la Comisión Europea.<br><br>
+        
+          <strong>Derechos:</strong> Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href="mailto:espfta@gmail.com" style="color: #66ccff;">espfta@gmail.com</a>, indicando en el asunto “Protección de Datos”.
+        </div>
+        
+      </div>
+      
+      
+      <div class="checkbox-container">
+        <input type="checkbox" id="privacidad" name="privacidad" required>
+        <label for="privacidad">Acepto la política de privacidad</label>
+      </div>
+
+      <button type="button" class="info-btn" onclick="toggleInfo()">¿Cómo asistir?</button>
+      <div id="info" class="info-text">
+        Para asistir como espectador, completa el formulario con tus datos, acepta la política de privacidad y pulsa "Enviar". Recibirás un correo de confirmación con tu entrada y las indicaciones para el evento. ¡Te esperamos!
+      </div>
+
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+    
+  </div>
+  
+<!-- Modal informativo reutilizado -->
+<!-- Modal informativo -->
+<div id="infoModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+  <div class="bg-white text-black p-6 rounded-xl shadow-lg max-w-md text-center">
+    <h2 class="text-xl font-bold mb-4">¡Próximamente!</h2>
+    <p class="mb-4">Esta sección estará disponible a partir del <strong>día 10/6/2025</strong>. ¡Gracias por tu interés! y disculpe por las molestias</p>
+    <button onclick="closeInfoModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+      Entendido
+    </button>
+  </div>
+</div>
+
+
+
+
+<div id="loadingSpinner" class="spinner hidden"></div>
+
+  <script src="../js/entradaspubliftan.js"></script>
+  
+</body>
+</html>
