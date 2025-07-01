@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trampolín Freestyle 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/index.css">
+  <script defer src="js/index.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#0A1F38] text-white font-sans">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <img src="fotos/1.png" alt="Título del evento" class="mx-auto mb-4 hero-img" />
+    <img src="fotos/2.png" alt="Información del evento" class="mb-4 info2" />
+    <div class="imagen-contenedor">
+      <img src="fotos/3.png" class="info3 cursor-pointer" alt="Imagen 3" onclick="goToEntradas()">
+
+      <img src="fotos/12.png" class="info12 cursor-pointer" alt="Imagen 12" onclick="goToParticipantesFta()">
+    </div>
+    
+  </section>
+
+  <!-- Video Placeholder -->
+  <section class="video-section">
+    <div class="flex justify-center items-center w-full px-4 py-8">
+      <iframe 
+      class="w-full max-w-[560px] lg:max-w-[960px] aspect-video rounded-md shadow-lg mt-0 lg:mt-24"
+      src="https://www.youtube.com/embed/3_Wf36gL07Y"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+    
+    </div>
+  </section>
+  
+  <!-- Imagenes principales -->
+  <div class="relative text-center my-8">
+    <img id="baseImage" src="fotos/8.png" alt="Cristian" class="base-img" />
+    <img id="image11" src="fotos/11.png" alt="Imagen 11" class="icon-img" onclick="handleReverse()" />
+
+    <div class="icon-buttons">
+      <img id="image9" src="fotos/9.png" alt="Imagen 9" class="img9 cursor-pointer icon9" onclick="handleClick()"  />
+      
+      <img id="image10" src="fotos/10.png" alt="Imagen 10" class="img10 cursor-pointer icon10" onclick="openPDF()" />
+        </div>
+  </div>
+
+
+  <div class="footer-container">
+    <img id="baseImage" src="fotos/orgof.jpg" alt="Cristian" class="footer-img" />
+    <div class="footer-contact">
+      <p class="footer-mail"> <a href="mailto:espfta@gmail.com" class="footer-link">Mail: espfta@gmail.com</a></p>
+      <p class="footer-ubi"> <a href="https://www.google.es/maps/place/In+Extremis+Club+Academy/@41.5246281,2.1266738,17z/data=!3m1!4b1!4m6!3m5!1s0x12a495e6adc01011:0x4f8c07c90bcd828f!8m2!3d41.5246241!4d2.1292487!16s%2Fg%2F11hmhcc9p3?hl=es&entry=ttu&g_ep=EgoyMDI1MDYwOS4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="footer-link">Ubicación: In Extremis Club Academy</a></p>
+    </div>
+     
+    <p class="footer-text">© 2025 Freestyle Trampoline Association</p>
+  </div>
+  
+  
+  
+
+  <!-- Modal PDF Viewer -->
+  <div id="pdfModal" class="modal">
+    <div class="modal-content">
+      <img src="fotos/13.png" alt="Cerrar PDF" onclick="closePDF()" class="close-btn" />
+      <a href="pdf/pdf.pdf" download class="download-btn">Descargar PDF</a>
+      <iframe src="pdf/pdf.pdf" class="w-full h-full" style="border: none;"></iframe>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+<!-- Modal informativo -->
+<div id="infoModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+  <div class="bg-white text-black p-6 rounded-xl shadow-lg max-w-md text-center">
+    <h2 class="text-xl font-bold mb-4">¡Próximamente!</h2>
+    <p class="mb-4">Esta sección estará disponible a partir del <strong>día 10/6/2025</strong>. ¡Gracias por tu interés! y disculpe por las molestias</p>
+    <button onclick="closeInfoModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+      Entendido
+    </button>
+  </div>
+</div>
+
+</body>
+</html>
